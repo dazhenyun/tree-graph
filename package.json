@@ -13,7 +13,8 @@
   },
   "keywords": [
     "tree",
-    "tree-graph"
+    "tree-graph",
+    "@dzc/tree-graph"
   ],
   "license": "MIT",
   "files": [
