@@ -1,6 +1,6 @@
 {
   "name": "@dzc/tree-graph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "description": "关系图组件",

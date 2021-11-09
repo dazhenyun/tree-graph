@@ -10,7 +10,7 @@ npm i @dzc/tree-graph --save
 
 ```jsx
 import React from 'react';
-import TreeGraph from '../lib';
+import TreeGraph from '@dzc/tree-graph';
 
 export default () => {
 
