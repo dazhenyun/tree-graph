@@ -193,6 +193,7 @@ export default () => {
     showStateIcon: true,
     descKey: "conf",
     descItemKey: "label",
+    nodePosKey: 'position',
     descItemValue: "value",
     nodeNameKey: "name",
     nodeIdKey: "id",
@@ -201,6 +202,7 @@ export default () => {
     nodeType: "modelRect",
     nodeSize: [150, 32],
     parentId: null,
+    parentIdKey: 'parent',
     modes: ["drag-canvas", "drag-node", "zoom-canvas", "click-select"],
     clickMenu: (item) => {
       console.warn("点击了右键菜单", item);
@@ -210,6 +212,12 @@ export default () => {
     },
     refresh: () => {
       console.warn("刷新了页面");
+    },
+    nodeDragendNode: (item) => {
+      console.warn('画布节点拖拽结束', item);
+    },
+    saveNodesPos: (item) => {
+      console.warn('保存画布信息', item);
     },
     menuList: [
       { key: "1", name: "新增节点" },
