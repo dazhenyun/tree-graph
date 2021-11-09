@@ -1,5 +1,5 @@
 import './index.less';
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Graph, Menu, Tooltip, TreeGraph } from '@antv/g6';
 import { Spin, Button } from 'antd';
 import Icon, {
@@ -8,7 +8,7 @@ import Icon, {
   ZoomOutOutlined,
   FullscreenOutlined,
   ReloadOutlined,
-  CompressOutlined,
+  CompressOutlined
   // SaveOutlined,
 } from '@ant-design/icons';
 import successIcon from './images/success.svg';
@@ -64,12 +64,12 @@ const TreeGraphMain = (props) => {
     menuList = [
       { key: '1', name: '新增节点' },
       { key: '2', name: '编辑节点' },
-      { key: '3', name: '删除节点' },
+      { key: '3', name: '删除节点' }
     ],
     typeObj = {
       0: { name: '数据库节点', img: databaseIcon },
       1: { name: '表节点', img: tableIcon },
-      2: { name: '字段节点', img: fieldIcon },
+      2: { name: '字段节点', img: fieldIcon }
     },
     stateObj = {
       0: { name: '成功', img: successIcon },
@@ -77,8 +77,8 @@ const TreeGraphMain = (props) => {
       2: { name: '运行中', img: runningIcon },
       3: { name: '警告', img: warningIcon },
       4: { name: '提示', img: tipsIcon },
-      5: { name: '疑问', img: questionIcon },
-    },
+      5: { name: '疑问', img: questionIcon }
+    }
   } = props;
 
   const treeGraphRef = useRef();
@@ -95,12 +95,12 @@ const TreeGraphMain = (props) => {
     if (bbox.width === 0 || bbox.height === 0) return;
     const viewCenter = {
       x: width / 2,
-      y: height / 2,
+      y: height / 2
     };
 
     const groupCenter = {
       x: bbox.x + bbox.width / 2,
-      y: bbox.y + bbox.height / 2,
+      y: bbox.y + bbox.height / 2
     };
     graph.translate(viewCenter.x - groupCenter.x, viewCenter.y - groupCenter.y);
   };
@@ -141,7 +141,7 @@ const TreeGraphMain = (props) => {
       if (item[parentIdKey] !== `${parentId}`) {
         edges.push({
           source: item[parentIdKey],
-          target: item[nodeIdKey],
+          target: item[nodeIdKey]
         });
       }
     });
@@ -173,7 +173,7 @@ const TreeGraphMain = (props) => {
 
     // 节点右键菜单
     const contextMenu = new Menu({
-      getContent () {
+      getContent: () => {
         let str = '<div class="graph-menu">';
         menuList.forEach((item) => {
           str += `<div key=${item[menuKey]} class="graph-menu-item">${item[menuValue]}</div>`;
@@ -196,7 +196,7 @@ const TreeGraphMain = (props) => {
       // 需要加上父级容器的 padding-top 24 、画布兄弟元素高度、与自身偏移量 10
       offsetY: 0,
       // 在哪些类型的元素上响应
-      itemTypes: ['node'],
+      itemTypes: ['node']
     });
 
     // 节点鼠标移入提示
@@ -220,7 +220,7 @@ const TreeGraphMain = (props) => {
         str += '</div>';
         outDiv.innerHTML = str;
         return outDiv;
-      },
+      }
     });
 
     // 自定义边-动态运行
@@ -255,13 +255,13 @@ const TreeGraphMain = (props) => {
     //   'cubic-horizontal', // extend the built-in edge 'cubic'
     // );
 
-    let myGraph = null;
+    let MyGraph = null;
     let layoutType = null;
     let layoutDir = null;
     let graphData = data;
     // 4种数据格式
     if ([1, 4].includes(dataType)) {
-      myGraph = Graph;
+      MyGraph = Graph;
       layoutType = 'dagre';
       layoutDir = 'rankDir';
       if (dataType === 4) {
@@ -271,7 +271,7 @@ const TreeGraphMain = (props) => {
       }
     }
     if ([2, 3].includes(dataType)) {
-      myGraph = TreeGraph;
+      MyGraph = TreeGraph;
       layoutType = 'compactBox';
       layoutDir = 'direction';
       if (dataType === 3) {
@@ -290,7 +290,7 @@ const TreeGraphMain = (props) => {
         [layoutDir]: dir,
         getId: (node) => node[nodeIdKey],
         getVGap: () => 20,
-        getHGap: () => 100,
+        getHGap: () => 100
       },
       defaultNode: {
         type: nodeType,
@@ -300,22 +300,22 @@ const TreeGraphMain = (props) => {
           stroke: '#69c0ff',
           fill: '#ffffff',
           lineWidth: 1,
-          fillOpacity: 1,
+          fillOpacity: 1
         },
         labelCfg: {
           position: 'right',
           style: {
             fill: '#595959',
             fontSize: 14,
-            cursor: 'pointer',
+            cursor: 'pointer'
           },
-          offset: 12,
+          offset: 12
         },
         preRect: {
           show: true,
           width: 4,
           fill: '#40a9ff',
-          radius: 2,
+          radius: 2
         },
         linkPoints: {
           top: false,
@@ -325,40 +325,40 @@ const TreeGraphMain = (props) => {
           size: 10,
           lineWidth: 1,
           fill: '#72CC4A',
-          stroke: '#72CC4A',
-        },
+          stroke: '#72CC4A'
+        }
       },
       defaultEdge: {
         type: 'cubic-horizontal',
         style: {
-          endArrow: true,
-        },
+          endArrow: true
+        }
       },
       modes: {
-        default: modes,
+        default: modes
       },
       nodeStateStyles: {
         hover: {
           stroke: '#1890ff',
-          lineWidth: 1.5,
+          lineWidth: 1.5
         },
         selected: {
           stroke: '#1890ff',
-          fill: '#e6f7ff',
-        },
-      },
+          fill: '#e6f7ff'
+        }
+      }
     };
     if (dataType === 4) {
       option.layout = null;
     }
-    graph = new myGraph(option);
+    graph = new MyGraph(option);
 
     graph.node((node) => {
       const cfg = {
         id: node[nodeIdKey],
         label: node[nodeNameKey],
         style: {
-          cursor: 'pointer',
+          cursor: 'pointer'
         },
         logoIcon: {
           show: showLogoIcon,
@@ -367,7 +367,7 @@ const TreeGraphMain = (props) => {
           img: typeObj[node.nodeType || 0].img,
           width: 16,
           height: 16,
-          offset: -8,
+          offset: -8
         },
         stateIcon: {
           show: showStateIcon,
@@ -376,8 +376,8 @@ const TreeGraphMain = (props) => {
           img: stateObj[node.status || 0].img,
           width: 16,
           height: 16,
-          offset: -5,
-        },
+          offset: -5
+        }
       };
       return cfg;
     });

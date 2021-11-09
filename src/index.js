@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './examples/App';
-import './index.css';
+import TreeGraph from './components/TreeGraph';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default TreeGraph;

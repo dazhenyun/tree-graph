@@ -1,5 +1,5 @@
 import React from 'react';
-import TreeGraph from '../lib';
+import TreeGraph from '../TreeGraph';
 
 export default () => {
 
@@ -219,15 +219,5 @@ export default () => {
     data: treeData
   };
 
-  return (
-    <div
-      style={{
-        width: '100%',
-        textAlign: 'center',
-        margin: '200px auto'
-      }}
-    >
-      <TreeGraph {...treeGraphProps} />
-    </div>
-  );
+  return <TreeGraph {...treeGraphProps} />;
 };
