@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import Demo from './components/Demo';
+import Demo from './demo/TreeGraph';
 
 ReactDOM.render(
-    <Demo />,
-    document.getElementById('app')
+  <Demo />,
+  document.getElementById('app')
 );

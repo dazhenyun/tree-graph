@@ -527,7 +527,7 @@ const TreeGraphMain = (props) => {
 TreeGraphMain.propTypes = {
   menuList: PropTypes.array,
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  graphHeight: PropTypes.number,
+  graphHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   dataType: PropTypes.number,
   dir: PropTypes.string,
   loading: PropTypes.bool,

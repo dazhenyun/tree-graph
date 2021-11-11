@@ -1,5 +1,5 @@
 import React from 'react';
-import TreeGraph from '../TreeGraph';
+import TreeGraph from '../components/TreeGraph';
 
 export default () => {
 
