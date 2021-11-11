@@ -20,6 +20,7 @@ import questionIcon from './images/question.svg';
 import tableIcon from './images/table.svg';
 import databaseIcon from './images/database.svg';
 import fieldIcon from './images/field.svg';
+import PropTypes from 'prop-types';
 
 let timer = null;
 let graph = null;
@@ -27,6 +28,7 @@ let size = 1.0;
 
 const TreeGraphMain = (props) => {
   const {
+    graphHeight = 500,
     dataType = 3,
     dir = 'LR',
     data = [],
@@ -488,7 +490,7 @@ const TreeGraphMain = (props) => {
   }, [data]);
 
   return (
-    <div className={`tree-graph ${isFullScreen && 'tree-full-screen'}`}>
+    <div className={`tree-graph ${isFullScreen && 'tree-full-screen'}`} style={{ height: graphHeight }}>
       <div className="graph-btns">
         <ZoomInOutlined title="放大" className="graph-btns-item" onClick={zoomOut} />
         <ZoomOutOutlined title="缩小" className="graph-btns-item" onClick={zoomIn} />
@@ -521,5 +523,33 @@ const TreeGraphMain = (props) => {
     </div>
   );
 };
+
+TreeGraphMain.propTypes = {
+  menuList: PropTypes.array,
+  data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  graphHeight: PropTypes.number,
+  dataType: PropTypes.number,
+  dir: PropTypes.string,
+  loading: PropTypes.bool,
+  showLogoIcon: PropTypes.bool,
+  showStateIcon: PropTypes.bool,
+  descKey: PropTypes.string,
+  descItemKey: PropTypes.string,
+  descItemValue: PropTypes.string,
+  nodeNameKey: PropTypes.string,
+  nodeIdKey: PropTypes.string,
+  menuKey: PropTypes.string,
+  menuValue: PropTypes.string,
+  nodeType: PropTypes.string,
+  nodeSize: PropTypes.array,
+  parentId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  parentIdKey: PropTypes.string,
+  modes: PropTypes.array,
+  clickMenu: PropTypes.func,
+  clickNode: PropTypes.func,
+  refresh: PropTypes.func,
+  nodeDragendNode: PropTypes.func,
+  saveNodesPos: PropTypes.func
+}
 
 export default TreeGraphMain;
