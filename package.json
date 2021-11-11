@@ -1,6 +1,6 @@
 {
   "name": "@dzc/tree-graph",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "description": "关系图组件",
   "keywords": [
     "graph",
