@@ -4,9 +4,9 @@
 
 基于react、antd、antv/g6封装的关系图组件
 
-## 效果图
+## 效果
 
-![avatar]('./src/assets/demo.png')
+![demo.png](https://i.loli.net/2021/11/11/qu5gsKZVYRHkU7f.png)
 
 ## 安装
 
@@ -296,6 +296,11 @@ status = 5，疑问
 
 ## 更新日志
 
+2.1.8 完善readme文档
+2.1.7 完善readme文档
+2.1.6 完善readme文档
+2.1.5 完善readme文档
+2.1.4 完善readme文档
 2.1.3 完善readme文档
 2.1.2 修复tooltip样式问题
 2.1.1 修复参数类型校验报错问题
