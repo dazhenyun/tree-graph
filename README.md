@@ -297,6 +297,7 @@ status = 5，疑问
 ## 更新日志
 
 ```
+2.2.1 完善readme文档
 2.2.0 完善readme文档
 2.1.9 完善readme文档
 2.1.8 完善readme文档
@@ -1002,10 +1003,14 @@ status = 5，疑问
 ## 提示
 
 ```
-如需支持更多自定义效果，请联系作者逐步完善。
+如需支持更多自定义效果，请联系作者逐步完善
 开发者：诺克
 微信：15858194070
+```
+
+## 关注
 
 开发不易，开源不易。如果这篇经验对您有所帮助，请多给我一些鼓励和支持，谢谢！。
-![demo.png](https://i.loli.net/2021/11/11/qu5gsKZVYRHkU7f.png)
-```
+
+![支付宝.jpg](https://i.loli.net/2021/11/12/IgrFyOTfE5AkWpu.jpg)
+![微信.jpg](https://i.loli.net/2021/11/12/AMhSpxZX19d5CIq.jpg)
