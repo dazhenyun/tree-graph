@@ -1,10 +1,13 @@
 {
-  "name": "tree-graph",
+  "name": "@dzc/tree-graph",
   "version": "2.2.0",
   "description": "关系图组件",
+  "private": false,
   "keywords": [
     "graph",
-    "tree-graph"
+    "tree-graph",
+    "react-tree-graph",
+    "@dzc/tree-graph"
   ],
   "main": "dist/bundle.js",
   "files": [
@@ -15,7 +18,6 @@
     "dev": "webpack-dev-server --inline --progress --config webpack.config.js"
   },
   "author": "zhutf@dazhenyun.cn",
-  "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@antv/g6": "^4.3.11",
