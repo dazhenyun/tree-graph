@@ -1,11 +1,10 @@
 {
-  "name": "@dzc/tree-graph",
+  "name": "tree-graph",
   "version": "2.2.0",
   "description": "关系图组件",
   "keywords": [
     "graph",
-    "tree-graph",
-    "@dzc/tree-graph"
+    "tree-graph"
   ],
   "main": "dist/bundle.js",
   "files": [
