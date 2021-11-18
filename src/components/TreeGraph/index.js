@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css';
 import './index.less';
 import React, { useEffect, useState, useRef } from 'react';
 import { Graph, Menu, Tooltip, TreeGraph } from '@antv/g6';
