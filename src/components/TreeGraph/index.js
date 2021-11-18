@@ -29,7 +29,7 @@ let size = 1.0;
 
 const TreeGraphMain = (props) => {
   const {
-    graphHeight = 500,
+    graphHeight = '100%',
     dataType = 3,
     dir = 'LR',
     data = [],
